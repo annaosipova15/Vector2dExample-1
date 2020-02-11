@@ -44,19 +44,16 @@ void Vector2d::print() {
 	printf_s("V(%lf, %lf)\n", this->x, this->y);
 }
 
-void Vector2d::sum(Vector2d other) {
-	this->x += other.x;
-	this->y += other.y;
+Vector2d Vector2d::sum(Vector2d other) {
+	return Vector2d(this->x + other.x, this->y + other.y);
 ;}
 
-void Vector2d::sub(Vector2d other) {
-	this->x -= other.x;
-	this->y -= other.y;
+Vector2d Vector2d::sub(Vector2d other) {
+	return Vector2d(this->x - other.x, this->y - other.y);
 }
 
-void Vector2d::mult(double scalar) {
-	this->x *= scalar;
-	this->y *= scalar;
+Vector2d Vector2d::mult(double scalar) {
+	return Vector2d(this->x * scalar, this->y * scalar);
 }
 
 double Vector2d::scalarMult(Vector2d other) {

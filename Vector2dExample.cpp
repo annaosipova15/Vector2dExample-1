@@ -12,13 +12,10 @@ int main() {
 	a.print();
 	b.print();
 	c.print();
-	a.sum(b);
-	a.print();
+	a.sum(b).print();
 	printf_s("b * c = %lf\n", b.scalarMult(c));
-	a.mult(3);
-	a.print();
-	a.sub(c);
-	a.print();
+	a.mult(3).print();
+	a.sub(c).print();
 	printf_s("cos angle (b,c) = %lf\n", b.angleCos(c));
 	printf_s("tan angle (b,c) = %lf\n", b.angleTan(c));
 	return 0;
