@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 class Vector2d
 {
@@ -14,20 +15,32 @@ class Vector2d
 
 		~Vector2d();
 
+		Vector2d operator+(const Vector2d& other) const; 
+		Vector2d operator-(const Vector2d& other) const;
+		Vector2d operator*(double scalar) const;
+		friend Vector2d operator*(double scalar, const Vector2d& vector);
+		double operator*(const Vector2d& other) const;
+
+		Vector2d& operator++();
+		Vector2d& operator--();
+		Vector2d operator++(int);
+		Vector2d operator--(int);
+
+		const Vector2d& operator+=(const Vector2d&);
+		const Vector2d& operator-=(const Vector2d&);
+		const Vector2d& operator*=(double scalar);
+
+		operator std::string() const;
+
 		void setx(double);
 		double getx();
 
 		void sety(double);
 		double gety();
 
-		Vector2d sum(Vector2d);
-		Vector2d sub(Vector2d);
-		Vector2d mult(double);
-		double scalarMult(Vector2d);
-		double lenght();
-		double angleCos(Vector2d);
-		double angleTan(Vector2d);
-
-		void print(void);
+		double lenght() const;
+		double angleCos(const Vector2d&) const;
+		double angleTan(const Vector2d&) const;
+		double angle(const Vector2d&) const;
 };
 
